@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces_visulizer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script> -->
+    <style>
+        /* Center the form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        /* Center the input and button */
+        #username,
+        button {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Apply light background color */
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Arrange charts side by side */
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1250px;
+            height: 400px;
+            margin: 20px auto;
+            /* background-color: #ffffff; */
+            border-radius: 5px;
+            overflow: hidden;
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+        }
+
+        /* Adjust chart width */
+        canvas {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+            /* margin-right: 5%; */
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        /* Style the input and button */
+        #username,
+        button {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Remove button border on click */
+        button:focus {
+            outline: none;
+        }
+        #username:focus{
+            outline: none;
+        }
+        /* Adjust button color */
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            /* width: 60% !important;/ */
+        }
+
+        /* Style the form status */
+        .status {
+            margin-top: 10px;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <input type="text" placeholder="handlename" name="name" id="username">
+        <button onclick="data(event)">submit</button>
+        <h1 class="status" id="status"></h1>
+    </form>
+        <div class="chart-container">
+        <canvas id="weekChart" style="width:100%;max-width:600px"></canvas>
+        <canvas id="yearChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
